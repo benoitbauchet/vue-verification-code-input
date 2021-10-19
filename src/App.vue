@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <VerificationCodeInput v-model="data" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VerificationCodeInput from "./components/VerificationCodeInput";
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: {VerificationCodeInput},
+  data() {
+    return {
+      data: null
+    }
+  },
+  /*methods: {
+    onInput(val) {
+      console.log("input ", val)
+    },
+    onCompleted() {
+      console.log("done!")
+    }
+  }*/
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
